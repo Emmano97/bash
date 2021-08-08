@@ -1,3 +1,19 @@
+<style>
+
+body{
+}
+
+pre{
+    max-height: 500px;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 1.2em;
+    overflow: auto;
+    background-color: white;
+    color: #9e9e9e;
+}
+</style>
+
 # FIILE                                                                    
 
 | Syntax | Description |                                            
@@ -44,6 +60,11 @@ else
 fi
 </pre>
 
+# Logical operators
+
+- && = AND
+- || = OR
+
 # For loop
 
 <pre>
@@ -73,4 +94,27 @@ read -p "PROMPT" VARIABLE
 <pre>read -p "Enter your username" USERNAME</pre>
 
 
+# EXIT Status / Return code
+- Code return by a command
+- Range from 0 to 255
+- 0 means success
+- Use for error checking
+- Use man or infoto find meaning of exit status
 
+| Syntax | Description |
+|--------|-------------|
+| "$?" | **Return the exit status(return code) of the previous command** |
+
+# Exit command
+- Explicitly define the return code
+    exit 0 **success code**
+    exit n (0 > n <= 255) **error code**
+- The default value is the return code of the last executed command
+
+# Command chaining
+
+| Syntax | Description |
+|--------|-------------|
+| **command1 && command2** | **command2** will be executed only if the **command1** return 0 as return code |
+| **command1 \|\| command2** | **command2** will be executed only if the **command1** don't return  0 as return code |
+| **command1 ; command2** | *Return the exit status(return code) of the previous command* |
