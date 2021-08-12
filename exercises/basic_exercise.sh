@@ -1,14 +1,13 @@
 #!/bin/bash
 
-COMMAND="cat etc/shadow"
+function file_count(){
+    for DIRECTORY in $@
+    do
+        local COUNT=$(ls $DIRECTORY | wc -l)
+        echo "${DIRECTORY}:"
+        echo $COUNT
+    done
+    return 0
+} 
 
-$($COMMAND)
-
-if [ "$?" -eq "0" ]
-then
-    echo "Command succeeded"
-    exit 0
-else
-    echo "Command failed"
-    exit 1
-fi
+file_count /etc /var /usr/bin

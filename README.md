@@ -104,6 +104,7 @@ read -p "PROMPT" VARIABLE
 | Syntax | Description |
 |--------|-------------|
 | "$?" | **Return the exit status(return code) of the previous command** |
+| "$$" | **Return the PID (process ID) of the current process** |
 
 # Exit command
 - Explicitly define the return code
@@ -118,3 +119,17 @@ read -p "PROMPT" VARIABLE
 | **command1 && command2** | **command2** will be executed only if the **command1** return 0 as return code |
 | **command1 \|\| command2** | **command2** will be executed only if the **command1** don't return  0 as return code |
 | **command1 ; command2** | *Return the exit status(return code) of the previous command* |
+
+# Functions
+*Two ways* 
+
+function function-name(){
+    \# code goes here.
+}
+
+*OR*
+
+function-name(){
+    \# code goes here.
+}
+
