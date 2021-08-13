@@ -133,3 +133,37 @@ function-name(){
     \# code goes here.
 }
 
+# Wilcard
+
+| Syntax | Description |
+|--------|-------------|
+| * | **matches zero or more characters** |
+| ? | **matches exactly one character** |
+| [] | **Character class, match exactly one character** |
+| [!] | **Exclude Character in the bracket** |
+
+ca[nt]* => can or cat, candy, catch...
+
+pop[!aiue] => exclude popa, popi, popu, pope
+
+| Syntax | Description |
+|--------|-------------|
+| [a-g]* | **matches every word start with a character between a and g** |
+| [3-6]* | **matches every word start with number between 3 and 6** |
+| [] | **Character class, match exactly one character** |
+| [!] | **Exclude Character in the bracket** |
+
+## Named Character classes
+
+| Syntax | Description |
+|--------|-------------|
+| [\[:alpha:]] | **Match alphabetic characters** |
+| [\[:alnum:]] | **Match alphanumeric characters** |
+| [\[:digit:]] | **Match digits, numbers and decimal from 0 to 9** |
+| [\[:lower:]] | **Match lowercase letters** |
+| [\[:upper:]] | **Match uppercase letters** |
+| [\[:space:]] | **Match space, tab and new line characters** |
+
+
+
+
