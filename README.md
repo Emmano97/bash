@@ -14,7 +14,8 @@ pre{
 }
 </style>
 
-# FIILE                                                                    
+# FILE                                                             
+-------------
 
 | Syntax | Description |                                            
 |--------|-------------|
@@ -27,6 +28,7 @@ pre{
 | -x FIILE | **True** if file *is executable by you* |
 
 # STRING
+-------------
 
 | Syntax | Description |
 |--------|-------------|
@@ -36,6 +38,7 @@ pre{
 | STRING1 != STRING2 | **True** if *striing1 is not equals to string2* |
 
 # ARITHMETIC OPERATORS (tests)
+-------------
 
 | Syntax | Description |
 |--------|-------------|
@@ -47,6 +50,7 @@ pre{
 | arg1 -ge arg2 | **True** if arg1 *is greater or equals to arg2 directory* |
 
 # Making Decisions - *The if statement*
+-------------
 
 <pre>
 if [ condition is true]
@@ -61,6 +65,7 @@ fi
 </pre>
 
 # Logical operators
+-------------
 
 - && = AND
 - || = OR
@@ -75,6 +80,7 @@ done
 </pre>
 
 # Positional parameters
+-------------
 
 <pre>
 prompt $> ./script.sh parameter1, parameter2, parameter3
@@ -89,12 +95,15 @@ prompt $> ./script.sh parameter1, parameter2, parameter3
 | $@ | **All parameters** we can use for loop to work iterate  through them |
 
 # Accepting User Input (STDIN)
+-------------
 
 read -p "PROMPT" VARIABLE
 <pre>read -p "Enter your username" USERNAME</pre>
 
 
 # EXIT Status / Return code
+-------------
+
 - Code return by a command
 - Range from 0 to 255
 - 0 means success
@@ -107,12 +116,15 @@ read -p "PROMPT" VARIABLE
 | "$$" | **Return the PID (process ID) of the current process** |
 
 # Exit command
+-------------
+
 - Explicitly define the return code
     exit 0 **success code**
     exit n (0 > n <= 255) **error code**
 - The default value is the return code of the last executed command
 
 # Command chaining
+-------------
 
 | Syntax | Description |
 |--------|-------------|
@@ -121,6 +133,7 @@ read -p "PROMPT" VARIABLE
 | **command1 ; command2** | *Return the exit status(return code) of the previous command* |
 
 # Functions
+-------------
 *Two ways* 
 
 function function-name(){
@@ -134,6 +147,7 @@ function-name(){
 }
 
 # Wilcard
+-------------
 
 | Syntax | Description |
 |--------|-------------|
@@ -154,6 +168,7 @@ pop[!aiue] => exclude popa, popi, popu, pope
 | [!] | **Exclude Character in the bracket** |
 
 ## Named Character classes
+-------------
 
 | Syntax | Description |
 |--------|-------------|
@@ -164,6 +179,23 @@ pop[!aiue] => exclude popa, popi, popu, pope
 | [\[:upper:]] | **Match uppercase letters** |
 | [\[:space:]] | **Match space, tab and new line characters** |
 
+# Case Statement
+-------------
+<pre>
+#!/bin/bash
 
+read -p "Enter y or n: " ANSWER
+case "$ANSWER" in
+    [yY] | [yY] [eE] [sS])
+        echo "You answered yes."
+        ;;
+    [nN] | [nN] [oO])
+        echo "You answered no."
+        ;;
+    *)
+        echo "Invalid answer"
+        ;;
+esac
+</pre>
 
 

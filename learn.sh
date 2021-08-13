@@ -1,10 +1,15 @@
 #!/bin/bash
 
-function greeting(){
-    for NAME in $@
-    do
-        echo "Hello world! ${NAME}"
-    done
-}
-greeting Jason emmano
-echo "${?}"
+read -p "Enter y or n: " ANSWER
+case "$ANSWER" in
+    [yY] | [yY] [eE] [sS])
+        echo "You answered yes."
+        ;;
+    [nN] | [nN] [oO])
+        echo "You answered no."
+        ;;
+    *)
+        echo "Invalid answer"
+        ;;
+esac
+ 
